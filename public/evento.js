@@ -27,6 +27,7 @@ window.invitacionVero = {
   // El enlace general muestra esta familia mientras no haya una fuente de invitados.
   // Para recuperar la entrada general, cambie invitadoMuestra a null.
   invitadoMuestra: { nombre: "Familia Rivera", asientos: 3 },
-  invitadosCSV: "", contactos: [], whatsapp: "",
+  invitadosCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdhe7k3UYa8CNk5-Xo0m8rFw-ox27kYgFp8swOPcfYHAIIBFGXQmfm4RQCNt1offFsitQgVheEHIqI/pub?gid=0&single=true&output=csv",
+  contactos: [], whatsapp: "",
   proyectoFirebase: "", coleccionInvitados: "guests", soloConCodigo: false,
 };
