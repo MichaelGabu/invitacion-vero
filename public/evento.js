@@ -24,6 +24,10 @@ window.invitacionVero = {
     { titulo: "Despedida", hora: "11:00 p. m.", descripcion: "Un último abrazo antes de volver a casa." },
   ],
   fotos: [], canciones: [],
+  // Cada entrada reemplaza una foto del álbum, en el orden indicado.
+  // Ejemplo: [{ src: "./album/vero-01.webp", alt: "Vero en el jardín" }]
+  // Con la lista vacía se muestran los tres retratos de muestra.
+  album: [],
   // El enlace general muestra esta familia mientras no haya una fuente de invitados.
   // Para recuperar la entrada general, cambie invitadoMuestra a null.
   invitadoMuestra: { nombre: "Familia Rivera", asientos: 3 },

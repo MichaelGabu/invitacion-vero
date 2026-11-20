@@ -1,0 +1,56 @@
+.section.album {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-block: 24px 20px;
+}
+
+.album h2 { margin: 0; }
+.album__frame {
+  width: min(100%, 360px);
+  padding: 7px 7px 12px;
+  border: 1px solid #c8ad7f;
+  background: var(--vero-paper);
+  box-shadow: 0 7px 18px #44263d24;
+}
+
+.album__track {
+  display: flex;
+  overflow-x: auto;
+  aspect-ratio: 3 / 4;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.album__track::-webkit-scrollbar { display: none; }
+.album__track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  scroll-snap-align: start;
+}
+
+.album__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: var(--vero-type-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--vero-muted);
+}
+.album__controls button {
+  width: var(--vero-min-tap);
+  height: var(--vero-min-tap);
+  border-radius: 50%;
+  border: 1px solid #c8ad7f;
+  background: var(--vero-paper);
+  color: var(--vero-plum);
+  font: 600 1.8rem/1 var(--vero-font-title);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .album__track { scroll-behavior: auto; }
+}

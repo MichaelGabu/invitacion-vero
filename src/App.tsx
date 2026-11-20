@@ -7,6 +7,7 @@ import Timer from './components/Timer'
 import Location from './components/Location'
 import DressCode from './components/DressCode'
 import Photo from './components/Photo'
+import PhotoCarousel from './components/PhotoCarousel'
 import Itinerary from './components/Itinerary'
 import Parents from './components/Parents'
 import Confirmation from './components/Confirmation'
@@ -77,6 +78,7 @@ export default function App() {
         <Audio audioRef={audioRef} />
         <Photo src={evento.fotos[0] || torre} alt={evento.fotos[0] ? 'Recuerdo de Vero' : 'La torre de Rapunzel entre glicinas'} />
         <Parents />
+        <PhotoCarousel photos={evento.album} />
         <Divider type="flower" />
         <Timer date={fecha} />
         <Location />

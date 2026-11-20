@@ -5,17 +5,18 @@ export interface Guest {
   cancion?: string
 }
 interface Actividad { titulo: string; hora: string; descripcion: string }
+export interface AlbumPhoto { src: string; alt: string }
 interface Evento {
   invitadoMuestra: Pick<Guest, "nombre" | "asientos"> | null;
   nombre: string; fechaISO: string; fecha: string; hora: string; lugar: string; direccion: string; mapa: string;
   oracion: string; familia: string; vestuario: string; ellas: string; ellos: string; fechaLimite: string;
-  fotos: string[]; canciones: string[]; itinerario: Actividad[]; whatsapp: string;
+  fotos: string[]; album: AlbumPhoto[]; canciones: string[]; itinerario: Actividad[]; whatsapp: string;
   invitadosCSV: string; proyectoFirebase: string; coleccionInvitados: string; soloConCodigo: boolean;
 }
 declare global { interface Window { invitacionVero?: Partial<Evento> } }
 export const evento: Evento = {
   invitadoMuestra: null, nombre: 'Vero', fechaISO: '', fecha: '', hora: '', lugar: '', direccion: '', mapa: '', familia: '',
-  oracion: '', vestuario: '', ellas: '', ellos: '', fechaLimite: '', fotos: [], canciones: [],
+  oracion: '', vestuario: '', ellas: '', ellos: '', fechaLimite: '', fotos: [], album: [], canciones: [],
   itinerario: [], whatsapp: '', invitadosCSV: '', proyectoFirebase: '',
   coleccionInvitados: 'guests', soloConCodigo: false, ...window.invitacionVero,
 }
