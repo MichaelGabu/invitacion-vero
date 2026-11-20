@@ -21,13 +21,7 @@ h1,h2,h3,h4 { font-weight: 600; }
 .button:before { display: none; }
 .button--color-text { --button-bg: var(--vero-plum); --button-color: var(--vero-parchment); }
 .button:focus-visible, a:focus-visible, .envelope__stamp:focus-visible { outline: 3px solid var(--vero-focus); outline-offset: 4px; }
-.head { padding-top: 5rem; }
-.head__logo { height: auto; aspect-ratio: auto; padding: .5rem 0 .1rem; }
-.head__logo-image { position: relative; font: 600 6.5rem/.95 var(--vero-font-title); letter-spacing: -.055em; color: var(--vero-plum); }
-.head__title { font-size: 2.1rem; }
 .section h2, .section h3 { color: var(--vero-plum); }
-.head__deco { pointer-events: none; }
-.head__flower { display:none; }
 .date__row { width: 100%; }
 .date__year, .date__month { text-transform: capitalize; }
 .date h2, .confirmation h2 { margin-bottom: .4rem; }
@@ -73,25 +67,9 @@ body::before {
 }
 .invitation { border-radius: 0; box-shadow: 0 20px 70px #130e2390; }
 @media(min-width:768px) {
-  .invitation { border: 1px solid #b69869; border-radius: 6px; }
+  .invitation { margin-top: 0; border: 1px solid #b69869; border-radius: 6px; }
 }
-.head {
-  min-height: 345px; padding: 64px 24px 80px; overflow: hidden; isolation: isolate;
-  color: var(--vero-parchment); position: relative;
-  background: linear-gradient(180deg,#251537a6,#30183c75 53%,#291632df), url('./assets/images/cielo.webp') center 35% / cover;
-}
-.head::before {
-  content: ''; position: absolute; inset: 14px; border: 1px solid #f9d58b88; pointer-events:none;
-  border-radius: 44% 44% 0 0 / 32% 32% 0 0;
-}
-.head__container { gap: 5px; justify-content: center; }
-.head__logo-image { color: #ffedb8; text-shadow: 0 4px 15px #20102dbb; }
-.head__title { color: #fff7e8; font-size: 1.95rem; text-shadow: 0 2px 5px #241333; }
-.head__divider { --primary-color: #f7d389; --secondary-color: #f4cf85; }
-.head__divider svg { width:92px; height: auto; }
-.head__deco--top-right .head__foliage { width: 170px; opacity:.85; }
-
-.date { position:relative; z-index:1; margin-top:-40px; padding:0 clamp(18px,6vw,36px) 26px; }
+.date { position:relative; z-index:1; padding:var(--space-md) clamp(18px,6vw,36px) 26px; }
 .date__container {
   gap: 15px; padding: 22px clamp(10px,4vw,25px) 26px; position:relative;
   border:1px solid #c8ad7f; outline:1px solid #dfcba6; outline-offset:-7px;

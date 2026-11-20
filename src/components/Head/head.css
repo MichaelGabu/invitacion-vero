@@ -1,81 +1,59 @@
 .head {
-  padding-top: calc(var(--space-xl, 2rem) * 1.5);
-  padding-bottom: 0;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: end;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--vero-night);
 }
-.head__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: var(--space-md, 1rem);
-  position: relative;
-}
-.head__logo {
-  width: min(100%, 340px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 5/2;
-  position: relative;
-  margin: auto;
-}
-.head__logo-image {
+.head__scene,
+.head__scene img {
   position: absolute;
-  width: 150%;
-  height: auto;
-  display: block;
-  max-width: 95vw;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.head__scene img {
+  object-fit: cover;
+  object-position: 42% 40%;
+  transform: translate3d(
+    calc(var(--pan-x, 0%) * var(--depth)),
+    calc(var(--pan-y, 0%) * var(--depth) + var(--scroll-offset, 0px) * (1 - var(--depth))),
+    0
+  ) scale(1.045);
+}
+.head__caption {
+  position: relative;
+  padding: 3rem 1rem max(3.5dvh, env(safe-area-inset-bottom), 1rem);
+  background: linear-gradient(transparent, #21102eaf 48%, #20112ed9);
+  color: var(--vero-parchment);
 }
 .head__title {
-  font-size: var(--h2-font-size);
-  font-family: var(--cursive-font-family);
-  font-weight: 400;
   margin: 0;
+  font: 600 clamp(1.5rem, 3.8dvh, 2rem)/1.1 var(--vero-font-title);
+  color: inherit;
+  text-shadow: 0 2px 6px #241333;
 }
-.head__deco {
-  position: absolute;
-  z-index: 1;
+.head__name {
+  display: block;
+  font-size: clamp(3.4rem, 11dvh, 6.5rem);
+  line-height: .95;
+  letter-spacing: -.055em;
+  color: #ffedb8;
 }
-.head__deco--top-right {
-  top: 0;
-  right: 0;
+.head__divider {
+  --primary-color: #f7d389;
+  --secondary-color: #f4cf85;
+  margin-top: .5rem;
 }
-.head__deco--top-right .head__flower {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 90px;
-  z-index: 1;
+.head__divider svg {
+  display: block;
+  width: clamp(4rem, 10dvh, 5.75rem);
+  height: auto;
+  margin: auto;
 }
-.head__deco--top-right .head__flower-image {
-  width: 100%;
-  translate: 0 -50%;
-}
-.head__deco--top-right .head__foliage {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 190px;
-  z-index: 0;
-}
-.head__deco--top-right .head__foliage-image {
-  width: 100%;
-  translate: 50% -60%;
-  transform-origin: center right;
-}
-.head__deco--bottom-left {
-  bottom: 0;
-  left: 0;
-}
-.head__deco--bottom-left .head__foliage {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 190px;
-  z-index: 0;
-}
-.head__deco--bottom-left .head__foliage-image {
-  width: 100%;
-  translate: -60% 60%;
-  scale: -1 1;
+@media (prefers-reduced-motion: reduce) {
+  .head__scene img { transform: none; }
 }
