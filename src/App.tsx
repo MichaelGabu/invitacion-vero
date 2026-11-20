@@ -67,7 +67,7 @@ export default function App() {
   }
   return <>
     <audio ref={audioRef} src={audio} preload="none" />
-    {sobreVisible && <Envelope guestName={guest?.nombre || 'Ti'} guestSeats={guest?.asientos} open={abierta} onClick={openInvitation} />}
+    {sobreVisible && <Envelope guestName={guest?.nombre || 'Ti'} guestSeats={guest?.asientos} open={abierta} onOpen={openInvitation} />}
     {abierta && <div className="invitation invitation--open" ref={cartaRef} tabIndex={-1}>
       <Head title="Mis quince años" />
       <main>
@@ -89,7 +89,7 @@ export default function App() {
         <Divider type="flower4" />
         <button className="regresar" onClick={()=>{
           audioRef.current?.pause(); setAbierta(false); setSobreVisible(true); window.scrollTo({top:0,behavior:'instant'})
-          requestAnimationFrame(()=>document.querySelector<HTMLButtonElement>('.envelope .button')?.focus())
+          requestAnimationFrame(()=>document.querySelector<HTMLButtonElement>('.envelope__play')?.focus())
         }}>Volver al sobre</button>
       </main>
     </div>}

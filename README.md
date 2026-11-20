@@ -1,6 +1,6 @@
 # Los quince de Vero
 
-Proyecto React + TypeScript + Vite adaptado de los componentes de la rama [development de la invitación de matrimonio](https://github.com/MichaelGabu/wedding-invitation/tree/development). La apertura mantiene el movimiento de ambas mitades del sobre y el sello, y el interior conserva las animaciones de entrada y desplazamiento de Anime.js 4.2.2. Los estilos originales se adaptaron a CSS con las variables de diseño de Vero.
+Proyecto React + TypeScript + Vite adaptado de los componentes de la rama [development de la invitación de matrimonio](https://github.com/MichaelGabu/wedding-invitation/tree/development). La portada reproduce el video del sobre al tocarla y se desvanece al terminar. El interior conserva las animaciones de entrada y desplazamiento de Anime.js 4.2.2. Los estilos originales se adaptaron a CSS con las variables de diseño de Vero.
 
 ## Vista con datos de muestra
 
@@ -27,7 +27,7 @@ dist/index.html es la entrada del sitio. dist/invitacion.html es una copia autoc
 
 ## Recorrido
 
-1. Sobre personalizado con nombre, sello y cupos. Toque el sello o «Ver invitación».
+1. Portada personalizada con nombre y cupos. Toque la portada o active «Reproducir invitación» para ver el video y entrar a la carta.
 2. Encabezado, calendario de cinco días con el día de la celebración resaltado, oración y control de música.
 3. Primer recuerdo, bendición de la familia y cuenta regresiva.
 4. Lugar, dirección y mapa, vestuario y segundo recuerdo.
