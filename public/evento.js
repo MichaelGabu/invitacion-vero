@@ -1,19 +1,19 @@
-// Vista de muestra. Sustituya estos datos ficticios antes de compartir la invitación definitiva.
+// La ubicación y el programa incluyen datos de muestra editables.
 window.invitacionVero = {
   nombre: "Vero",
-  fechaISO: "2027-03-20T17:00:00-05:00",
-  fecha: "Sábado 20 de marzo de 2027",
+  fechaISO: "2027-02-27T17:00:00-05:00",
+  fecha: "Sábado 27 de febrero de 2027",
   hora: "5:00 p. m.",
   lugar: "Hacienda Luz de Luna",
   direccion: "Camino de las Glicinas, km 4 · Subachoque, Cundinamarca",
   // El lugar es ficticio. El mapa de muestra abre el municipio.
   mapa: "https://www.google.com/maps/search/?api=1&query=Subachoque%2C+Cundinamarca%2C+Colombia",
   oracion: "Gracias, Dios, por estos quince años y por las manos que me han acompañado hasta aquí. Que nunca me falte la ilusión de descubrir lo que hay más allá de mi ventana.",
-  familia: "Elena y Santiago",
+  familia: "Juan Jaramillo y Julieth Cortes",
   vestuario: "Formal de noche",
   ellas: "Vestido largo o midi. El lavanda está reservado para Vero.",
   ellos: "Traje oscuro con camisa clara.",
-  fechaLimite: "6 de marzo de 2027",
+  fechaLimite: "13 de febrero de 2027",
   itinerario: [
     { titulo: "Bienvenida", hora: "5:00 p. m.", descripcion: "Nos encontramos en el jardín para el cóctel de bienvenida." },
     { titulo: "Entrada de Vero", hora: "5:30 p. m.", descripcion: "Se abren las puertas y empieza mi noche de quince." },

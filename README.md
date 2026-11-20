@@ -4,7 +4,7 @@ Proyecto React + TypeScript + Vite adaptado de los componentes de la rama [devel
 
 ## Vista con datos de muestra
 
-La configuración inicial muestra a la familia Rivera con tres cupos para el sábado 20 de marzo de 2027, a las 5:00 p. m. La hacienda, la dirección y los nombres son ficticios. El enlace al mapa abre Subachoque como referencia. La lista de horarios y la fecha límite también son editables en public/evento.js. Para volver al saludo general, asigne null a invitadoMuestra. Una lista real de invitados tiene prioridad sobre la familia de muestra.
+La configuración inicial muestra a la familia Rivera con tres cupos para el sábado 27 de febrero de 2027, a las 5:00 p. m. Los padres de Vero son Juan Jaramillo y Julieth Cortes. La hacienda y la dirección son ficticias. El enlace al mapa abre Subachoque como referencia. La lista de horarios y la fecha límite también son editables en public/evento.js. Para volver al saludo general, asigne null a invitadoMuestra. Una lista real de invitados tiene prioridad sobre la familia de muestra.
 
 ## Ejecutar
 
