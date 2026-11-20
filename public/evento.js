@@ -1,6 +1,6 @@
 // La ubicación y el programa incluyen datos de muestra editables.
 window.invitacionVero = {
-  nombre: "Vero",
+  nombre: "Veronica",
   fechaISO: "2027-02-27T17:00:00-05:00",
   fecha: "Sábado 27 de febrero de 2027",
   hora: "5:00 p. m.",
