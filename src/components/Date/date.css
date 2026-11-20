@@ -1,0 +1,74 @@
+.date__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.date__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  container-type: inline-size;
+}
+.date__box {
+  width: 3.75rem;
+  flex: 0 0 3.75rem;
+  font-weight: 400;
+}
+.date__box-day {
+  font-size: var(--h6-font-size);
+  font-weight: inherit;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+.date__box-date {
+  font-size: var(--h1-font-size);
+  font-weight: inherit;
+  line-height: 1;
+  position: relative;
+}
+.date__box-date > span {
+  z-index: 1;
+}
+.date__box-date-highlight {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 110%;
+  height: auto;
+  z-index: 0;
+}
+.date__box--before-yesterday > div, .date__box--after-tomorrow > div {
+  opacity: 0.15;
+  filter: blur(2px);
+}
+.date__box--yesterday > div, .date__box--tomorrow > div {
+  opacity: 0.5;
+  filter: blur(1px);
+}
+.date__box--d {
+  font-weight: 700;
+}
+.date__month {
+  font-size: var(--h3-font-size);
+  font-weight: 700;
+}
+.date__year {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--h4-font-size);
+  font-weight: 400;
+  gap: var(--space-sm);
+  line-height: 1;
+}
+.date__year:before, .date__year:after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background-color: var(--text-color);
+}

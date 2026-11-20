@@ -1,0 +1,132 @@
+import { evento } from '../../invitacion'
+import React, { useEffect, useRef } from "react";
+import { createScope, utils, animate, onScroll, type Scope, stagger } from '../../lib/anime.esm.min.js';
+import './date.css';
+
+interface DateProps {
+    date: string; // Should be in ISO 8601 format (e.g., '2024-11-30')
+}
+
+const dateBox = (date: Date, className: string, highLight: boolean) => {
+    return (
+        <div className={'date__box ' + className}>
+            <div className="date__box-day">
+                <span>{date.toLocaleDateString('es-CO', {weekday:'short'})}</span>
+            </div>
+            <div className="date__box-date">
+                <span>{String(date.getDate()).padStart(2,'0')}</span>
+                {highLight && 
+                    <svg className="date__box-date-highlight" width="62" height="57" viewBox="0 0 62 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M61 17.4061C61 8.34572 53.7637 1 44.8363 1C38.9579 1 33.8295 4.19372 31 8.95467C28.1705 4.19533 23.0421 1 17.1637 1C8.23632 1.0016 1 8.34572 1 17.4061C1 19.4765 1.39474 21.4507 2.08474 23.2743C7.42947 38.8776 31 56 31 56C31 56 54.5705 38.8776 59.9168 23.2743C60.6068 21.4507 61 19.4765 61 17.4061Z" stroke="var(--secondary-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                }
+            </div>
+        </div>
+    );
+}
+
+const DateComponent: React.FC<DateProps> = ({ date }) => {
+    // Parse the date string to a Date object
+    const d = new Date(date.slice(0, 10) + 'T12:00:00');
+    const yesterday = new Date(d);
+    yesterday.setDate(d.getDate() - 1);
+    const before_yesterday = new Date(d);
+    before_yesterday.setDate(d.getDate() - 2);
+    const tomorrow = new Date(d);
+    tomorrow.setDate(d.getDate() + 1);
+    const after_tomorrow = new Date(d);
+    after_tomorrow.setDate(d.getDate() + 2);
+
+    const root = useRef<HTMLDivElement>(null);
+    const scope = useRef<Scope | null>(null);
+
+    useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        scope.current = createScope({ root })
+        scope.current.add(() => {
+            const $boxes = utils.$('.date__box');
+            const $month = utils.$('.date__month');
+            const $year = utils.$('.date__year');
+
+            utils.set($boxes, {
+                y: 100,
+                opacity: 0,
+                filter: 'blur(2px)'
+            });
+            animate($boxes, {
+                y: [100, 0],
+                opacity: [0, 1],
+                filter: ['blur(2px)', 'blur(0px)'],
+                duration: 1000,
+                delay: stagger(100, { start: 0 } ),
+                ease: 'easeOutQuad',
+                autoplay: onScroll({
+                    enter: 'bottom-=10% top',
+					leave: 'top+=10% bottom',
+                    debug: false,
+                })
+            });
+
+            utils.set($month, {
+                opacity: 0,
+                y: 50
+            });
+            animate($month, {
+                opacity: [0, 1],
+                y: [50, 0],
+                delay: 350,
+                duration: 750,
+                ease: 'easeOutQuad',
+                autoplay: onScroll({
+                    enter: 'bottom-=10% top',
+					leave: 'top+=10% bottom',
+                    debug: false,
+                })
+            });
+
+            utils.set($year, {
+                opacity: 0,
+                y: 50
+            });
+            animate($year, {
+                opacity: [0, 1],
+                y: [50, 0],
+                delay: 450,
+                duration: 750,
+                ease: 'easeOutQuad',
+                autoplay: onScroll({
+                    enter: 'bottom-=10% top',
+					leave: 'top+=10% bottom',
+                    debug: false,
+                })
+            });
+        });
+
+        return () => scope.current?.revert();
+    }, []);
+    
+    if (!date) return <section className="section date" ref={root}><div className="section__container date__container"><h2>La fecha</h2><p>{evento.fecha || 'Te la compartiré muy pronto.'}</p></div></section>;
+    return (
+        <section className="section date" ref={root}>
+            <div className="section__container date__container">
+                <div className="date__row">
+                    {dateBox(before_yesterday, 'date__box--before-yesterday', false)}
+                    {dateBox(yesterday, 'date__box--yesterday', false)}
+                    {dateBox(d, 'date__box--d', true)}
+                    {dateBox(tomorrow, 'date__box--tomorrow', false)}
+                    {dateBox(after_tomorrow, 'date__box--after-tomorrow', false)}
+                </div>
+                <div className="date__info">
+                    <div className="date__month">
+                        <span>{d.toLocaleDateString('es-CO', {month:'long'})}</span>
+                    </div>
+                    <div className="date__year">
+                        <span>{d.getFullYear()}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default DateComponent;

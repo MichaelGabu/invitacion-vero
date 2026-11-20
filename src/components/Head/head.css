@@ -1,0 +1,81 @@
+.head {
+  padding-top: calc(var(--space-xl, 2rem) * 1.5);
+  padding-bottom: 0;
+}
+.head__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--space-md, 1rem);
+  position: relative;
+}
+.head__logo {
+  width: min(100%, 340px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 5/2;
+  position: relative;
+  margin: auto;
+}
+.head__logo-image {
+  position: absolute;
+  width: 150%;
+  height: auto;
+  display: block;
+  max-width: 95vw;
+}
+.head__title {
+  font-size: var(--h2-font-size);
+  font-family: var(--cursive-font-family);
+  font-weight: 400;
+  margin: 0;
+}
+.head__deco {
+  position: absolute;
+  z-index: 1;
+}
+.head__deco--top-right {
+  top: 0;
+  right: 0;
+}
+.head__deco--top-right .head__flower {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  z-index: 1;
+}
+.head__deco--top-right .head__flower-image {
+  width: 100%;
+  translate: 0 -50%;
+}
+.head__deco--top-right .head__foliage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 190px;
+  z-index: 0;
+}
+.head__deco--top-right .head__foliage-image {
+  width: 100%;
+  translate: 50% -60%;
+  transform-origin: center right;
+}
+.head__deco--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.head__deco--bottom-left .head__foliage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 190px;
+  z-index: 0;
+}
+.head__deco--bottom-left .head__foliage-image {
+  width: 100%;
+  translate: -60% 60%;
+  scale: -1 1;
+}

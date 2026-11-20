@@ -1,0 +1,49 @@
+.footer__container {
+  display: grid;
+  gap: var(--space-xl);
+  position: relative;
+}
+.footer__rainenvelopes {
+  display: grid;
+  gap: var(--space-sm);
+  place-items: center;
+  position: relative;
+}
+.footer__rainenvelopes-texture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100%, 15rem);
+  height: auto;
+  translate: -50% -50%;
+  z-index: 0;
+  opacity: 0.3;
+}
+.footer__rainenvelopes-icon {
+  position: relative;
+  z-index: 1;
+}
+.footer__rainenvelopes-icon-icon {
+  width: 3.5rem;
+  height: auto;
+}
+.footer__rainenvelopes-text {
+  display: block;
+  font-size: var(--h5-font-size);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.25;
+  position: relative;
+  z-index: 1;
+}
+.footer__prayer {
+  padding-top: var(--space-xl);
+}
+.footer__prayer p {
+  font-size: var(--h5-font-size);
+  margin-bottom: 0.3em;
+  line-height: 1.25;
+}
+.footer__prayer p:last-child {
+  margin-bottom: 0;
+}

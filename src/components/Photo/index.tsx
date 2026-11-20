@@ -1,0 +1,21 @@
+import './photo.css';
+import photoFlowers from '../../assets/glicinas.webp';
+
+interface PhotoProps {
+    src: string;
+    alt: string;
+    style?: React.CSSProperties;
+}
+
+const Photo = ({ src, alt, style }: PhotoProps) => {
+    return (
+        <section className="section photo">
+            <div className="section__container photo__container">
+                <img src={src} alt={alt} loading="lazy" className="photo__image" style={style} />
+                <img src={photoFlowers} alt="" loading="lazy" className="photo__flowers" />
+            </div>
+        </section>
+    );
+};
+
+export default Photo;

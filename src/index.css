@@ -1,0 +1,64 @@
+:root {
+  /* Cielo, papel, sobre y luz de la portada */
+  --vero-night: #27163F;
+  --vero-plum: #513081;
+  --vero-lavender: #C8A2D7;
+  --vero-gold: #F8D58A;
+  --vero-amber: #EA9951;
+  --vero-parchment: #FFF8ED;
+  --vero-ink: #2C1938;
+  --vero-muted: #655071;
+  --vero-line: #E4D3E9;
+  --vero-focus: #784B9A;
+  --vero-paper: #FFFCF8;
+  --vero-soft: #F5ECF8;
+  --vero-success: #275440;
+  --vero-success-bg: #EBF5EE;
+  --vero-error: #8C314A;
+  --vero-error-bg: #FCEFF1;
+  --vero-font-title: "Cormorant Upright", Georgia, serif;
+  --vero-font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --vero-type-name: clamp(3.5rem, 13vw, 5rem);
+  --vero-type-title: 2rem;
+  --vero-type-body: 1rem;
+  --vero-type-label: .875rem;
+  --vero-space-1: 4px;
+  --vero-space-2: 8px;
+  --vero-space-3: 12px;
+  --vero-space-4: 16px;
+  --vero-space-5: 24px;
+  --vero-space-6: 32px;
+  --vero-space-7: 48px;
+  --vero-space-8: 64px;
+  --vero-radius-card: 20px;
+  --vero-radius-control: 12px;
+  --vero-min-tap: 44px;
+  --vero-content-max: 480px;
+  --vero-cover-ratio: 9 / 16;
+  --vero-motion: 220ms;
+  --vero-ease: cubic-bezier(.2, .75, .25, 1);
+}
+
+@font-face {
+  font-family: "Cormorant Upright";
+  src: url("./assets/CormorantUpright-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-width: 280px;
+  background: radial-gradient(ellipse at 8% 0%, #ecdff1, transparent 55%), radial-gradient(ellipse at 98% 100%, #e1cfe7, transparent 53%), #f6eef3;
+  color: var(--vero-ink);
+  font: 400 1rem/1.6 var(--vero-font-body);
+  min-height: 100svh;
+}
+h1, h2, p, dl, dd { margin: 0; }
+h1, h2 { font: 600 var(--vero-type-title)/1.07 var(--vero-font-title); color: var(--vero-plum); }
+h1:focus { outline: none; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--vero-focus); outline-offset: 4px; }
+::selection { background: var(--vero-lavender); color: var(--vero-night); }

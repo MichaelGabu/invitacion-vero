@@ -1,0 +1,34 @@
+.divider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.divider__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.divider__container svg {
+  max-width: 100%;
+  height: auto;
+}
+.divider__container img {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+.divider--flower .divider__container {
+  width: 90%;
+}
+.divider--flower2 .divider__container {
+  width: 90%;
+}
+.divider--flower3 .divider__container {
+  width: 90%;
+}
+.divider--flower4 .divider__container {
+  width: 90%;
+}

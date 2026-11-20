@@ -1,0 +1,31 @@
+.parents__container {
+  display: grid;
+  gap: var(--space-lg);
+}
+.parents__title {
+  font-size: var(--h5-font-size);
+  font-weight: 400;
+  margin: 0;
+}
+.parents__list {
+  display: grid;
+  place-items: center;
+  gap: calc(var(--space-md) * 1.5);
+  list-style: none;
+}
+.parents__item {
+  display: grid;
+  gap: var(--space-sm);
+  width: 100%;
+}
+.parents__item-title {
+  font-size: var(--h5-font-size);
+  font-weight: 400;
+  margin: 0;
+}
+.parents__item-name {
+  font-size: var(--h3-font-size);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}

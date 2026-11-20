@@ -1,0 +1,26 @@
+.confirmation {
+  padding-top: 0;
+}
+.confirmation__container {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: var(--space-lg);
+}
+.confirmation__content {
+  display: grid;
+  place-items: center;
+  gap: var(--space-sm);
+}
+.confirmation__title {
+  font-size: var(--h5-font-size);
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+}
+.confirmation__subtitle {
+  font-size: var(--h2-font-size);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
