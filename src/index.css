@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/Montserrat-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
 :root {
   /* Cielo, papel, sobre y luz de la portada */
   --vero-night: #27163F;
@@ -17,7 +23,7 @@
   --vero-error: #8C314A;
   --vero-error-bg: #FCEFF1;
   --vero-font-title: "Cormorant Upright", Georgia, serif;
-  --vero-font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --vero-font-body: "Montserrat", sans-serif;
   --vero-type-name: clamp(3.5rem, 13vw, 5rem);
   --vero-type-title: 2rem;
   --vero-type-body: 1rem;
