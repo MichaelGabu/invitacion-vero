@@ -8,7 +8,7 @@ export default function Confirmation({ guest }: {guest: Guest | null}) {
   const [nombre, setNombre] = useState(guest?.nombre || '')
   const [asiste, setAsiste] = useState(true)
   const [cupos, setCupos] = useState('1')
-  const telefono = String(evento.contactos[Number(guest?.celular) - 1] || evento.whatsapp || '').replace(/\D/g,'')
+  const telefono = String(evento.whatsapp || '').replace(/\D/g,'')
   function enviar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const campo = e.currentTarget.elements.namedItem('nombre') as HTMLInputElement

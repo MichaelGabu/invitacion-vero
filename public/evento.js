@@ -28,6 +28,6 @@ window.invitacionVero = {
   // Para recuperar la entrada general, cambie invitadoMuestra a null.
   invitadoMuestra: { nombre: "Familia Rivera", asientos: 3 },
   invitadosCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdhe7k3UYa8CNk5-Xo0m8rFw-ox27kYgFp8swOPcfYHAIIBFGXQmfm4RQCNt1offFsitQgVheEHIqI/pub?gid=0&single=true&output=csv",
-  contactos: [], whatsapp: "",
+  whatsapp: "+57 350 1234567", // Provisional para las pruebas de confirmación.
   proyectoFirebase: "", coleccionInvitados: "guests", soloConCodigo: false,
 };

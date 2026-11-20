@@ -39,7 +39,7 @@ Edite public/evento.js para personalizar el contenido y vuelva a compilar. En un
 - lugar, direccion y mapa controlan la ubicación. La dirección permite buscar en Google Maps si no se especifica un enlace.
 - oracion, familia, ellas, ellos, itinerario y fechaLimite personalizan los textos. El programa incluido es una propuesta editable.
 - fotos admite dos rutas, en orden. canciones admite hasta cuatro rutas de audio por índice. Para archivos propios, ubíquelos en public y escriba una ruta relativa a la entrada (por ejemplo, fotos/vero.webp). La copia portátil incluye las ilustraciones y melodías predeterminadas. Los medios personalizados por URL o ruta deben seguir disponibles.
-- Use whatsapp como número general y contactos como lista de números de anfitriones con indicativo internacional. Sin un número definido, el invitado selecciona el chat al enviar el mensaje.
+- Configure en `whatsapp` el número con indicativo internacional que recibirá todas las confirmaciones. Sin un número definido, el invitado selecciona el chat al enviar el mensaje.
 
 ## Invitados y confirmación
 
@@ -48,8 +48,8 @@ Para probar el sobre de muestra abra ?guest=DEMO sin una fuente de invitados con
     nombre,asientos,codigo,celular,cancion
     Familia de muestra,2,EJEMPLO,2,3
 
-El ejemplo selecciona el segundo contacto y la tercera canción. Los índices empiezan en 1. Envíe enlaces con la forma index.html?guest=CODIGO. Con soloConCodigo activado la entrada general requiere código, como en la boda. Los códigos desconocidos muestran «Invitación no encontrada» y la consulta permite reintentar errores de conexión.
+El ejemplo selecciona la tercera canción. La columna `celular` de la hoja original puede conservarse o eliminarse. Todas las familias responden al número configurado en `whatsapp`. Envíe enlaces con la forma index.html?guest=CODIGO. Con soloConCodigo activado la entrada general requiere código, como en la boda. Los códigos desconocidos muestran «Invitación no encontrada» y la consulta permite reintentar errores de conexión.
 
-Una hoja publicada como CSV se descarga en el navegador. Use los índices de contacto en la columna celular. También se mantiene la alternativa de Firestore de la entrega anterior mediante proyectoFirebase y coleccionInvitados. La colección usa el código como ID del documento y los mismos nombres de campos. Si se configuran ambas fuentes, la hoja CSV tiene prioridad.
+Una hoja publicada como CSV se descarga en el navegador. También se mantiene la alternativa de Firestore de la entrega anterior mediante proyectoFirebase y coleccionInvitados. La colección usa el código como ID del documento y los mismos nombres de campos. Si se configuran ambas fuentes, la hoja CSV tiene prioridad.
 
 El formulario limita la cantidad al cupo de la invitación y permite declinar. La respuesta se entrega cuando el invitado envía el mensaje en WhatsApp.

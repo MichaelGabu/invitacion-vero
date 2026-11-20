@@ -2,7 +2,6 @@ export interface Guest {
   nombre: string
   asientos: number
   codigo: string
-  celular?: string
   cancion?: string
 }
 interface Actividad { titulo: string; hora: string; descripcion: string }
@@ -10,14 +9,14 @@ interface Evento {
   invitadoMuestra: Pick<Guest, "nombre" | "asientos"> | null;
   nombre: string; fechaISO: string; fecha: string; hora: string; lugar: string; direccion: string; mapa: string;
   oracion: string; familia: string; vestuario: string; ellas: string; ellos: string; fechaLimite: string;
-  fotos: string[]; canciones: string[]; itinerario: Actividad[]; contactos: string[]; whatsapp: string;
+  fotos: string[]; canciones: string[]; itinerario: Actividad[]; whatsapp: string;
   invitadosCSV: string; proyectoFirebase: string; coleccionInvitados: string; soloConCodigo: boolean;
 }
 declare global { interface Window { invitacionVero?: Partial<Evento> } }
 export const evento: Evento = {
   invitadoMuestra: null, nombre: 'Vero', fechaISO: '', fecha: '', hora: '', lugar: '', direccion: '', mapa: '', familia: '',
   oracion: '', vestuario: '', ellas: '', ellos: '', fechaLimite: '', fotos: [], canciones: [],
-  itinerario: [], contactos: [], whatsapp: '', invitadosCSV: '', proyectoFirebase: '',
+  itinerario: [], whatsapp: '', invitadosCSV: '', proyectoFirebase: '',
   coleccionInvitados: 'guests', soloConCodigo: false, ...window.invitacionVero,
 }
 
@@ -43,12 +42,12 @@ function filasCSV(texto: string): string[][] {
 function invitado(datos: Record<string, string>, codigo: string): Guest | null {
   const asientos = Number(datos.asientos)
   if (!datos.nombre?.trim() || !Number.isSafeInteger(asientos) || asientos < 1) return null
-  return { nombre: datos.nombre.trim(), asientos, codigo, celular: datos.celular, cancion: datos.cancion }
+  return { nombre: datos.nombre.trim(), asientos, codigo, cancion: datos.cancion }
 }
 export function invitadoDeMuestra(): Guest | null {
   if (evento.invitadosCSV || evento.proyectoFirebase || !evento.invitadoMuestra) return null
   const { nombre, asientos } = evento.invitadoMuestra
-  return invitado({ nombre, asientos: String(asientos), cancion: '1', celular: '1' }, 'DEMO')
+  return invitado({ nombre, asientos: String(asientos), cancion: '1' }, 'DEMO')
 }
 
 export async function getGuest(codigo: string, signal: AbortSignal): Promise<Guest | null> {
